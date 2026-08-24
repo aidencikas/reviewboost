@@ -1,12 +1,46 @@
+import { useRef } from 'react';
 import { useLanguage } from '../../i18n';
+import { useGsapContext } from '../../hooks/useGsapContext';
+import { gsap } from 'gsap';
 import { Container } from '../ui/Container';
 import { Accordion } from '../ui/Accordion';
 
 export function FAQ() {
   const { t } = useLanguage();
+  const sectionRef = useRef<HTMLElement>(null);
+  const headlineRef = useRef<HTMLHeadingElement>(null);
+  const accordionRef = useRef<HTMLDivElement>(null);
+
+  useGsapContext(() => {
+    if (!sectionRef.current) return;
+
+    gsap.set(headlineRef.current, { opacity: 0, y: 30 });
+    gsap.set(accordionRef.current, { opacity: 0, y: 20 });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: 'top 70%',
+        toggleActions: 'play none none none',
+      },
+    });
+
+    tl.to(headlineRef.current, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: 'power3.out',
+    }).to(accordionRef.current, {
+      opacity: 1,
+      y: 0,
+      duration: 0.7,
+      ease: 'power3.out',
+    }, '-=0.4');
+  });
 
   return (
     <section
+      ref={sectionRef}
       id="faq"
       className="relative py-28 md:py-36 lg:py-44 overflow-hidden"
     >
@@ -36,7 +70,9 @@ export function FAQ() {
           </div>
 
           {/* Accordion */}
-          <Accordion items={t.faq.questions} />
+          <div ref={accordionRef}>
+            <Accordion items={t.faq.questions} />
+          </div>
         </div>
       </Container>
     </section>

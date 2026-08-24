@@ -73,7 +73,7 @@ export function CTA() {
     <section
       ref={sectionRef}
       id="cta"
-      className="relative py-28 md:py-36 lg:py-44 overflow-hidden"
+      className="relative py-28 md:py-36 lg:py-44 overflow-hidden noise-overlay"
     >
       {/* Deep navy background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-navy-950)] via-[var(--color-navy-900)] to-[var(--color-navy-800)]" />
@@ -153,11 +153,11 @@ export function CTA() {
               </div>
 
               {/* Product */}
-              <div className="relative z-10">
+              <div className="relative z-10 product-shine">
                 <ProductImage
                   variant="dark"
                   alt="ReviewBoost NFC Card"
-                  className="w-full max-w-sm drop-shadow-2xl"
+                  className="w-full max-w-sm drop-shadow-2xl transition-transform duration-500 hover:scale-[1.03]"
                 />
               </div>
 

@@ -126,18 +126,18 @@ export function ProductShowcase() {
                 />
               </div>
 
-              <div className="relative z-10">
+              <div className="relative z-10 product-shine">
                 {theme === 'dark' ? (
                   <ProductImage
                     variant="dark"
                     alt="ReviewBoost NFC Google Review Card - Dark"
-                    className="w-full max-w-lg drop-shadow-2xl"
+                    className="w-full max-w-lg drop-shadow-2xl transition-transform duration-500 hover:scale-[1.02]"
                   />
                 ) : (
                   <ProductImage
                     variant="bright"
                     alt="ReviewBoost NFC Google Review Card - Bright"
-                    className="w-full max-w-lg drop-shadow-2xl"
+                    className="w-full max-w-lg drop-shadow-2xl transition-transform duration-500 hover:scale-[1.02]"
                   />
                 )}
               </div>

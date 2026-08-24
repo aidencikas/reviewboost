@@ -36,7 +36,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
             text-[var(--text-primary)]
             placeholder:text-[var(--text-muted)]
             transition-all duration-[var(--duration-fast)] ease-[var(--ease-default)]
-            focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent
+            focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent input-glow
             disabled:opacity-50 disabled:cursor-not-allowed
             min-h-[120px]
             resize-y

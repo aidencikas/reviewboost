@@ -148,7 +148,7 @@ export function Hero() {
     <section
       ref={sectionRef}
       id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative min-h-screen flex items-center overflow-hidden noise-overlay"
     >
       {/* Premium background treatment */}
       <div className="absolute inset-0">
@@ -221,9 +221,13 @@ export function Hero() {
               ref={ctaRef}
               className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start mb-8"
             >
-              <Button variant="primary" size="lg">
-                <a href="#contact">{t.hero.cta}</a>
-              </Button>
+              {/* CTA glow ring behind primary button */}
+              <div className="relative">
+                <div className="absolute -inset-2 rounded-[var(--radius-lg)] bg-[var(--color-blue-500)]/10 blur-lg opacity-60 pointer-events-none" />
+                <Button variant="primary" size="lg">
+                  <a href="#contact">{t.hero.cta}</a>
+                </Button>
+              </div>
               <Button variant="ghost" size="lg">
                 <a href="#how-it-works">{t.hero.secondary}</a>
               </Button>
@@ -259,17 +263,17 @@ export function Hero() {
               {/* Background glow */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <div
-                  className="w-[100%] h-[100%] rounded-full blur-[80px]"
+                  className="w-[120%] h-[120%] rounded-full blur-[100px]"
                   style={{
                     background: theme === 'dark'
-                      ? 'radial-gradient(circle, rgba(37, 99, 235, 0.2) 0%, transparent 60%)'
-                      : 'radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 60%)',
+                      ? 'radial-gradient(circle, rgba(37, 99, 235, 0.25) 0%, rgba(212, 168, 67, 0.05) 40%, transparent 65%)'
+                      : 'radial-gradient(circle, rgba(37, 99, 235, 0.12) 0%, rgba(212, 168, 67, 0.03) 40%, transparent 65%)',
                   }}
                 />
               </div>
 
               {/* Product image — large and dominant */}
-              <div className="relative z-10">
+              <div className="relative z-10 product-shine">
                 {theme === 'dark' ? (
                   <ProductImage
                     variant="dark"
@@ -315,7 +319,7 @@ export function Hero() {
         {/* Scroll indicator */}
         <div
           ref={scrollIndicatorRef}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-3"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-3 scroll-pulse"
         >
           <span className="text-caption uppercase tracking-widest">{t.hero.scrollIndicator}</span>
           <div className="w-px h-12 bg-gradient-to-b from-[var(--color-blue-500)]/50 to-transparent" />

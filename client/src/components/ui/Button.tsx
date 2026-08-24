@@ -72,6 +72,7 @@ export function Button({
         focus-visible:outline-2 focus-visible:outline-[var(--color-primary)] focus-visible:outline-offset-2
         disabled:opacity-50 disabled:cursor-not-allowed
         hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]
+        ${variant === 'primary' || variant === 'accent' ? 'btn-shimmer' : ''}
         ${variantStyles[variant]}
         ${sizeStyles[size]}
         ${className}

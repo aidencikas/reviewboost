@@ -157,7 +157,7 @@ export function Benefits() {
           {/* Second benefit */}
           <div
             ref={benefit2Ref}
-            className="rounded-3xl bg-[var(--bg-secondary)] p-8 md:p-10 border border-[var(--border-subtle)] hover:border-[var(--color-blue-500)]/20 transition-all duration-500 group"
+            className="rounded-3xl bg-[var(--bg-secondary)] p-8 md:p-10 border border-[var(--border-subtle)] hover:border-[var(--color-blue-500)]/20 transition-all duration-500 group gradient-border"
           >
             <span className="inline-flex items-center gap-2 px-3 py-1 text-xs font-semibold tracking-wider uppercase bg-[var(--color-gold-500)]/10 text-[var(--color-gold-500)] rounded-full mb-4">
               <div className="w-1.5 h-1.5 rounded-full bg-[var(--color-gold-500)]" />
@@ -177,7 +177,7 @@ export function Benefits() {
           {/* Third benefit */}
           <div
             ref={benefit3Ref}
-            className="rounded-3xl bg-[var(--bg-secondary)] p-8 md:p-10 border border-[var(--border-subtle)] hover:border-[var(--color-blue-500)]/20 transition-all duration-500 group"
+            className="rounded-3xl bg-[var(--bg-secondary)] p-8 md:p-10 border border-[var(--border-subtle)] hover:border-[var(--color-blue-500)]/20 transition-all duration-500 group gradient-border"
           >
             <span className="inline-flex items-center gap-2 px-3 py-1 text-xs font-semibold tracking-wider uppercase bg-[var(--color-blue-500)]/10 text-[var(--color-blue-500)] rounded-full mb-4">
               <div className="w-1.5 h-1.5 rounded-full bg-[var(--color-blue-500)]" />

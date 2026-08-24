@@ -10,7 +10,8 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[var(--bg-secondary)] border-t border-[var(--border-subtle)]">
+    <footer className="bg-[var(--bg-secondary)] border-t border-[var(--border-subtle)] relative">
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--color-blue-500)]/20 to-transparent" />
       <Container>
         <div className="py-12 md:py-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">

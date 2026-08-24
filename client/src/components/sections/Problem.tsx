@@ -176,7 +176,7 @@ export function Problem() {
           <div className="order-1 lg:order-2 flex justify-center">
             <div ref={phoneRef} className="relative perspective-[1000px]">
               {/* Phone frame */}
-              <div className="relative w-64 h-[480px] md:w-72 md:h-[540px] rounded-[44px] border-[3px] border-[var(--border-primary)] bg-[var(--bg-primary)] shadow-2xl overflow-hidden">
+              <div className="relative w-64 h-[480px] md:w-72 md:h-[540px] rounded-[44px] border-[3px] border-[var(--border-primary)] bg-[var(--bg-primary)] shadow-[0_20px_60px_-15px_rgba(37,99,235,0.15)] overflow-hidden">
                 {/* Dynamic notch */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-7 bg-[var(--border-primary)] rounded-b-2xl z-10" />
 
@@ -245,6 +245,7 @@ export function Problem() {
                       height: `${50 + i * 25}px`,
                       left: `${-10 - i * 12}px`,
                       top: `${-25 - i * 12}px`,
+                      animation: `ping 3s cubic-bezier(0, 0, 0.2, 1) ${i * 0.8}s infinite`,
                     }}
                   />
                 ))}

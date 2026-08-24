@@ -74,7 +74,7 @@ export function BusinessValue() {
             {t.businessValue.points.map((point, index) => (
               <div
                 key={index}
-                className="group relative flex items-center gap-6 p-6 md:p-8 rounded-2xl bg-[var(--bg-primary)] border border-[var(--border-subtle)] hover:border-[var(--color-blue-500)]/20 hover:shadow-lg transition-all duration-500"
+                className="group relative flex items-center gap-6 p-6 md:p-8 rounded-2xl bg-[var(--bg-primary)] border border-[var(--border-subtle)] hover:border-[var(--color-blue-500)]/20 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-500"
               >
                 {/* Number */}
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[var(--color-blue-500)]/10 to-[var(--color-blue-500)]/5 flex items-center justify-center flex-shrink-0 group-hover:from-[var(--color-blue-500)]/20 group-hover:to-[var(--color-blue-500)]/10 transition-all duration-500">

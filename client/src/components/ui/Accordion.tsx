@@ -27,6 +27,7 @@ function AccordionItem({ question, answer, isOpen = false, onToggle }: Accordion
           id={buttonId}
           onClick={onToggle}
           className="
+            accordion-trigger
             w-full
             flex items-center justify-between
             py-5

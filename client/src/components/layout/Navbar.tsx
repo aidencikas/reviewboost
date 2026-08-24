@@ -53,6 +53,7 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 className="
+                  nav-link
                   text-sm font-medium
                   text-[var(--text-secondary)]
                   hover:text-[var(--text-primary)]

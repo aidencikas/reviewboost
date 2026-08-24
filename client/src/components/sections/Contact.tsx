@@ -190,7 +190,7 @@ export function Contact() {
           {/* Form with premium treatment */}
           <div className="max-w-2xl mx-auto">
             {status === 'success' ? (
-              <div className="text-center py-16 px-8 rounded-3xl bg-[var(--bg-secondary)] border border-[var(--color-success)]/20 shadow-lg">
+              <div className="text-center py-16 px-8 rounded-3xl bg-[var(--bg-secondary)] border border-[var(--color-success)]/20 shadow-lg shadow-[0_8px_40px_-12px_rgba(16,185,129,0.15)]">
                 <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-[var(--color-success)]/10 flex items-center justify-center">
                   <svg
                     className="w-10 h-10 text-[var(--color-success)]"
@@ -223,7 +223,7 @@ export function Contact() {
             ) : (
               <form
                 onSubmit={handleSubmit}
-                className="p-8 md:p-12 rounded-3xl bg-[var(--bg-secondary)] border border-[var(--border-subtle)] shadow-xl"
+                className="p-8 md:p-12 rounded-3xl bg-[var(--bg-secondary)] border border-[var(--border-subtle)] shadow-xl shadow-[0_8px_40px_-12px_rgba(0,0,0,0.08)]"
                 noValidate
               >
                 {/* Honeypot — hidden from real users */}

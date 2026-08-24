@@ -125,8 +125,8 @@ export function HowItWorks() {
             ref={lineRef}
             className="hidden lg:block absolute top-[72px] left-[18%] right-[18%] h-px origin-left"
             style={{
-              background: `linear-gradient(90deg, var(--color-blue-500) 0%, var(--color-blue-500) 30%, var(--color-gold-500) 50%, var(--color-blue-500) 70%, var(--color-blue-500) 100%)`,
-              opacity: 0.3,
+              background: `linear-gradient(90deg, transparent 0%, var(--color-blue-500) 15%, var(--color-gold-500) 50%, var(--color-blue-500) 85%, transparent 100%)`,
+              opacity: 0.4,
             }}
           />
 
@@ -140,7 +140,7 @@ export function HowItWorks() {
                 {/* Step number with icon */}
                 <div className="relative inline-flex mb-8">
                   {/* Outer ring */}
-                  <div className="w-24 h-24 md:w-28 md:h-28 rounded-full border-2 border-[var(--color-blue-500)]/20 flex items-center justify-center relative z-10 bg-[var(--bg-primary)] group-hover:border-[var(--color-blue-500)]/40 transition-colors duration-500">
+                  <div className="w-24 h-24 md:w-28 md:h-28 rounded-full border-2 border-[var(--color-blue-500)]/20 flex items-center justify-center relative z-10 bg-[var(--bg-primary)] group-hover:border-[var(--color-blue-500)]/40 group-hover:shadow-[0_0_30px_rgba(37,99,235,0.1)] transition-all duration-500">
                     {/* Inner content */}
                     <div className="flex flex-col items-center gap-1">
                       <span className="text-[var(--color-blue-500)]">

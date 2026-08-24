@@ -109,7 +109,7 @@ export function UseCases() {
               className="group relative p-6 md:p-8 rounded-2xl bg-[var(--bg-primary)] border border-[var(--border-subtle)] hover:border-[var(--color-blue-500)]/20 hover:shadow-lg transition-all duration-500 text-center"
             >
               {/* Icon */}
-              <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-[var(--color-blue-500)]/10 flex items-center justify-center text-[var(--color-blue-500)] group-hover:bg-[var(--color-blue-500)]/15 group-hover:scale-110 transition-all duration-500">
+              <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-[var(--color-blue-500)]/10 flex items-center justify-center text-[var(--color-blue-500)] group-hover:bg-[var(--color-blue-500)]/15 icon-bounce transition-all duration-500">
                 {icons[index] || icons[0]}
               </div>
 
