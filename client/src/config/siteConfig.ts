@@ -6,13 +6,13 @@ export const siteConfig = {
     en: 'More Google Reviews. Made Simple.',
   },
 
-  // Google Review URL (placeholder — replace with actual URL)
-  googleReviewUrl: '',
+  // Google Review URL
+  googleReviewUrl: 'https://g.page/r/CZUKyvpXY2mQEBM/review',
 
-  // Contact Information (placeholders — replace with actual values)
+  // Contact Information
   contact: {
-    email: '',
-    phone: '',
+    email: 'reviewboostlt@gmail.com',
+    phone: '+37067784788',
     address: '',
   },
 
@@ -23,8 +23,8 @@ export const siteConfig = {
     linkedin: '',
   },
 
-  // Website URL (placeholder — replace with production URL)
-  url: '',
+  // Website URL
+  url: 'https://reviewboost.lt',
 
   // Analytics (placeholder — add GA4 measurement ID)
   analytics: {

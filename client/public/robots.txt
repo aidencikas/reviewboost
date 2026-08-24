@@ -1,0 +1,6 @@
+# ReviewBoost — https://reviewboost.lt
+
+User-agent: *
+Allow: /
+
+Sitemap: https://reviewboost.lt/sitemap.xml
