@@ -250,6 +250,7 @@ export const en = {
   legal: {
     privacyTitle: 'Privacy Policy',
     termsTitle: 'Terms of Service',
+    lastUpdated: 'Last updated',
     comingSoon: 'This page is coming soon.',
     comingSoonDetail: 'For additional information, please contact us.',
   },

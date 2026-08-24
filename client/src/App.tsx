@@ -1,3 +1,5 @@
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { useLanguage } from './i18n';
@@ -13,6 +15,49 @@ import {
   FAQ,
   Contact,
 } from './components/sections';
+import { PrivacyPolicy } from './components/legal/PrivacyPolicy';
+import { TermsOfService } from './components/legal/TermsOfService';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
+
+function HomePage() {
+  return (
+    <>
+      <Navbar />
+      <main id="main-content">
+        <Hero />
+        <Problem />
+        <HowItWorks />
+        <ProductShowcase />
+        <Benefits />
+        <UseCases />
+        <BusinessValue />
+        <CTA />
+        <FAQ />
+        <Contact />
+      </main>
+      <Footer />
+    </>
+  );
+}
+
+function LegalLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <>
+      <Navbar />
+      <main id="main-content">
+        {children}
+      </main>
+      <Footer />
+    </>
+  );
+}
 
 function App() {
   const { t } = useLanguage();
@@ -35,22 +80,27 @@ function App() {
         {t.accessibility.skipToContent}
       </a>
 
-      <Navbar />
+      <ScrollToTop />
 
-      <main id="main-content">
-        <Hero />
-        <Problem />
-        <HowItWorks />
-        <ProductShowcase />
-        <Benefits />
-        <UseCases />
-        <BusinessValue />
-        <CTA />
-        <FAQ />
-        <Contact />
-      </main>
-
-      <Footer />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route
+          path="/privacy"
+          element={
+            <LegalLayout>
+              <PrivacyPolicy />
+            </LegalLayout>
+          }
+        />
+        <Route
+          path="/terms"
+          element={
+            <LegalLayout>
+              <TermsOfService />
+            </LegalLayout>
+          }
+        />
+      </Routes>
     </div>
   );
 }

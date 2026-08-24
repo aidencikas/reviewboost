@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../../i18n';
 import { siteConfig } from '../../config/siteConfig';
 import { Container } from '../ui/Container';
@@ -106,18 +107,18 @@ export function Footer() {
               © {currentYear} {siteConfig.brand}. {t.footer.rights}
             </p>
             <div className="flex items-center gap-6">
-              <a
-                href="#privacy"
+              <Link
+                to="/privacy"
                 className="text-sm text-[var(--text-muted)] hover:text-[var(--text-secondary)] transition-colors"
               >
                 {t.footer.privacyPolicy}
-              </a>
-              <a
-                href="#terms"
+              </Link>
+              <Link
+                to="/terms"
                 className="text-sm text-[var(--text-muted)] hover:text-[var(--text-secondary)] transition-colors"
               >
                 {t.footer.termsOfService}
-              </a>
+              </Link>
             </div>
           </div>
         </div>

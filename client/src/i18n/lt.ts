@@ -250,6 +250,7 @@ export const lt = {
   legal: {
     privacyTitle: 'Privatumo politika',
     termsTitle: 'Naudojimosi taisyklės',
+    lastUpdated: 'Paskutinį kartą atnaujinta',
     comingSoon: 'Šis puslapis bus netrukus.',
     comingSoonDetail: 'Dėl papildomos informacijos susisiekite su mumis.',
   },
