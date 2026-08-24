@@ -251,6 +251,7 @@ export const en = {
     privacyTitle: 'Privacy Policy',
     termsTitle: 'Terms of Service',
     lastUpdated: 'Last updated',
+    backToHome: 'Back to Home',
     comingSoon: 'This page is coming soon.',
     comingSoonDetail: 'For additional information, please contact us.',
   },

@@ -44,7 +44,7 @@ export function LegalPage({ title, lastUpdated, children }: LegalPageProps) {
                 d="M15 19l-7-7 7-7"
               />
             </svg>
-            {t.nav.getQuote}
+            {t.legal.backToHome}
           </button>
 
           {/* Title */}

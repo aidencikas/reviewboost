@@ -235,10 +235,13 @@ async function sendEmail(
 
 // --- CORS headers ---
 
+const ALLOWED_ORIGIN = 'https://reviewboost.lt';
+
 const CORS_HEADERS = {
-  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Origin': ALLOWED_ORIGIN,
   'Access-Control-Allow-Headers': 'Content-Type',
   'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Vary': 'Origin',
 } as const;
 
 function jsonResponse(
@@ -318,7 +321,7 @@ export default async function handler(request: Request): Promise<Response> {
 
   // Send business notification email
   const businessSubject = `New ReviewBoost Inquiry — ${data.businessName}`;
-  const businessHtml = `<pre style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; white-space: pre-wrap;">${escapeHtml(buildBusinessEmail(data))}</pre>`;
+  const businessHtml = `<pre style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; white-space: pre-wrap;">${buildBusinessEmail(data)}</pre>`;
 
   const businessResult = await sendEmail(
     contactEmail,

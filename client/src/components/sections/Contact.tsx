@@ -71,6 +71,11 @@ export function Contact() {
           language === 'lt'
             ? 'Kiekis turi būti bent 1'
             : 'Quantity must be at least 1';
+      } else if (qty > 10000) {
+        newErrors.quantity =
+          language === 'lt'
+            ? 'Kiekis negali viršyti 10 000'
+            : 'Quantity cannot exceed 10,000';
       }
     }
 
@@ -283,6 +288,7 @@ export function Contact() {
                     value={formData.quantity}
                     onChange={(e) => handleChange('quantity', e.target.value)}
                     min="1"
+                    max="10000"
                     error={errors.quantity}
                   />
                 </div>
