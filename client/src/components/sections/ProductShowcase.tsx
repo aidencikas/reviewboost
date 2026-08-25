@@ -126,14 +126,14 @@ export function ProductShowcase() {
               <div className="relative z-10 product-shine rounded-2xl md:rounded-3xl overflow-hidden shadow-[0_30px_60px_-15px_rgba(6,10,20,0.35)] ring-1 ring-black/5 dark:ring-white/10 max-w-lg transition-transform duration-500 hover:scale-[1.02]">
                 {theme === 'dark' ? (
                   <ProductImage
-                    variant="dark"
-                    alt="ReviewBoost NFC Google Review Card - Dark"
+                    variant="duo-dark"
+                    alt="ReviewBoost NFC Google Review Cards - Dark"
                     className="w-full"
                   />
                 ) : (
                   <ProductImage
-                    variant="bright"
-                    alt="ReviewBoost NFC Google Review Card - Bright"
+                    variant="duo-bright"
+                    alt="ReviewBoost NFC Google Review Cards - Bright"
                     className="w-full"
                   />
                 )}

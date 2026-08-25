@@ -6,9 +6,13 @@ import darkWebp from '../../assets/images/product-dark.webp';
 import darkPng from '../../assets/images/product-dark.png';
 import secondaryWebp from '../../assets/images/product-secondary.webp';
 import secondaryPng from '../../assets/images/product-secondary.png';
+import duoBrightWebp from '../../assets/images/product-duo-bright.webp';
+import duoBrightPng from '../../assets/images/product-duo-bright.png';
+import duoDarkWebp from '../../assets/images/product-duo-dark.webp';
+import duoDarkPng from '../../assets/images/product-duo-dark.png';
 
 interface ProductImageProps extends Omit<ImgHTMLAttributes<HTMLImageElement>, 'src'> {
-  variant?: 'bright' | 'dark' | 'secondary';
+  variant?: 'bright' | 'dark' | 'secondary' | 'duo-bright' | 'duo-dark';
   fallbackSrc?: string;
   loading?: 'lazy' | 'eager';
 }
@@ -17,6 +21,8 @@ const imageSources = {
   bright: { webp: brightWebp, png: brightPng },
   dark: { webp: darkWebp, png: darkPng },
   secondary: { webp: secondaryWebp, png: secondaryPng },
+  'duo-bright': { webp: duoBrightWebp, png: duoBrightPng },
+  'duo-dark': { webp: duoDarkWebp, png: duoDarkPng },
 };
 
 export function ProductImage({

@@ -1,12 +1,16 @@
 import { useRef } from 'react';
 import { useLanguage } from '../../i18n';
+import { useTheme } from '../../hooks/useTheme';
 import { useGsapContext } from '../../hooks/useGsapContext';
 import { gsap } from 'gsap';
 import { Container } from '../ui/Container';
-import { ProductImage } from '../product/ProductImage';
+
+import mainBright from '../../assets/images/product-main-bright.jfif';
+import mainDark from '../../assets/images/product-main-dark.jfif';
 
 export function HowItWorks() {
   const { t } = useLanguage();
+  const { theme } = useTheme();
   const sectionRef = useRef<HTMLElement>(null);
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const lineRef = useRef<HTMLDivElement>(null);
@@ -156,14 +160,15 @@ export function HowItWorks() {
                   <div className="absolute inset-0 rounded-full bg-[var(--color-blue-500)]/5 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
 
-                {/* Visual */}
-                <div className="mb-6 flex justify-center h-24 items-center">
+                {/* Visual — fixed height so nothing overlaps the title below */}
+                <div className="mb-6 flex justify-center h-44 items-center">
                   {index === 0 && (
-                    <div className="w-36 rounded-xl overflow-hidden shadow-lg border border-[var(--border-subtle)] group-hover:shadow-xl transition-shadow duration-500">
-                      <ProductImage
-                        variant="secondary"
+                    <div className="w-44 rounded-xl overflow-hidden shadow-lg border border-[var(--border-subtle)] group-hover:shadow-xl transition-shadow duration-500">
+                      <img
+                        src={theme === 'dark' ? mainDark : mainBright}
                         alt="ReviewBoost card"
-                        className="w-full h-auto"
+                        className="w-full h-auto object-contain"
+                        loading="lazy"
                       />
                     </div>
                   )}

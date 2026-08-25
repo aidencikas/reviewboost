@@ -291,7 +291,7 @@ export function Hero() {
               </div>
 
               {/* Gold star accent — hidden on small screens to avoid crowding */}
-              <div ref={starRef} className="absolute -top-6 -right-4 hidden sm:block md:-top-4 md:right-4">
+              <div ref={starRef} className="absolute -top-6 -right-4 z-20 hidden sm:block md:-top-4 md:right-4">
                 <div className="w-14 h-14 md:w-24 md:h-24 flex items-center justify-center">
                   <svg
                     viewBox="0 0 24 24"
@@ -305,7 +305,7 @@ export function Hero() {
               </div>
 
               {/* NFC badge */}
-              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 md:-bottom-2">
+              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 z-20 md:left-0 md:translate-x-0 md:-bottom-2">
                 <div className="flex items-center gap-2 px-4 py-2 rounded-full glass-light dark:glass-dark shadow-lg">
                   <div className="w-2 h-2 rounded-full bg-[var(--color-blue-500)] animate-pulse" aria-hidden="true" />
                   <span className="text-xs font-medium text-[var(--text-primary)]">{t.hero.nfcBadge}</span>

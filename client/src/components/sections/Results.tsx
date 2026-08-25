@@ -1,9 +1,12 @@
 import { useRef } from 'react';
 import { useLanguage } from '../../i18n';
+import { useTheme } from '../../hooks/useTheme';
 import { useGsapContext } from '../../hooks/useGsapContext';
 import { gsap } from 'gsap';
 import { Container } from '../ui/Container';
-import { ProductImage } from '../product/ProductImage';
+
+import mainBright from '../../assets/images/product-main-bright.jfif';
+import mainDark from '../../assets/images/product-main-dark.jfif';
 
 const BEFORE_BARS = [30, 42, 35, 50, 40, 48, 38];
 const AFTER_BARS = [35, 45, 55, 65, 78, 90, 100];
@@ -66,6 +69,7 @@ function FlowArrow() {
 
 export function Results() {
   const { t } = useLanguage();
+  const { theme } = useTheme();
   const sectionRef = useRef<HTMLElement>(null);
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const beforeRef = useRef<HTMLDivElement>(null);
@@ -168,10 +172,11 @@ export function Results() {
               <div className="w-[130%] h-[130%] rounded-full blur-[60px] bg-[var(--color-blue-500)]/20" />
             </div>
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-[0_20px_50px_-15px_rgba(6,10,20,0.45)] ring-1 ring-black/5 dark:ring-white/10 product-shine">
-              <ProductImage
-                variant="secondary"
+              <img
+                src={theme === 'dark' ? mainDark : mainBright}
                 alt="ReviewBoost NFC Google Review Card"
-                className="w-full h-auto"
+                className="w-full h-auto object-contain"
+                loading="lazy"
               />
             </div>
           </div>
