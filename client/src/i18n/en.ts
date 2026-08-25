@@ -2,7 +2,6 @@ export const en = {
   // Navigation
   nav: {
     howItWorks: 'How It Works',
-    benefits: 'Benefits',
     product: 'Product',
     faq: 'FAQ',
     contact: 'Contact',
@@ -11,15 +10,18 @@ export const en = {
 
   // Hero
   hero: {
-    eyebrow: 'NFC Technology',
-    headline: 'More Google Reviews.\nMade Simple.',
+    eyebrow: 'NFC Google Review Solution',
+    headline: 'Make it easier for customers\nto leave a Google review.',
     subheadline:
-      'ReviewBoost makes it easier for customers to access your Google review experience with a simple tap.',
+      'A premium NFC review card for businesses that want a faster, simpler way for customers to leave feedback.',
     cta: 'Get a Quote',
     secondary: 'Learn More',
-    scrollIndicator: 'Learn more',
+    scrollIndicator: 'Scroll',
     nfcBadge: 'NFC Ready',
-    trustBadge: 'Trusted by businesses worldwide',
+    trustBadge: 'Works with Google Reviews',
+    priceLabel: 'From €15',
+    priceNote: 'Complete setup available',
+    locationLine: 'Based in Vilnius. We come to you — set up within 24 hours.',
     phoneReviewLabel: 'Rate your experience',
     phoneSubmitLabel: 'Submit',
     phoneTapLabel: 'Tap to review',
@@ -82,33 +84,16 @@ export const en = {
     ],
   },
 
-  // Benefits
-  benefits: {
-    eyebrow: 'Benefits',
-    headline: 'Why Choose ReviewBoost',
-    learnMore: 'Learn more',
-    items: [
-      {
-        title: 'SIMPLER',
-        description:
-          'Removes barriers that customers face when trying to leave a review. One tap — and the review page opens.',
-      },
-      {
-        title: 'MORE PROFESSIONAL',
-        description:
-          'A modern physical touchpoint that shows you value customer feedback and care about your reputation.',
-      },
-      {
-        title: 'FASTER',
-        description:
-          'Eliminates unnecessary steps between the customer and the review. No searching, no signing in — just a tap.',
-      },
-      {
-        title: 'CONVENIENT',
-        description:
-          'Place it where customers naturally interact — on the counter, near the register, or other visible spots.',
-      },
-    ],
+  // Results (before / after)
+  results: {
+    eyebrow: 'Results',
+    headline: 'How your business grows with ReviewBoost',
+    before: 'Before',
+    after: 'After',
+    business: 'Your business',
+    reviewsBefore: '(45 reviews)',
+    reviewsAfter: '(152 reviews)',
+    caption: 'More positive reviews. Higher ranking. More trust.',
   },
 
   // Use Cases
@@ -146,7 +131,7 @@ export const en = {
     eyebrow: 'Get Started',
     headline: 'Ready to make reviews\neasier?',
     description:
-      'Contact us and get a custom quote. We\'ll respond within 24 hours.',
+      'Contact us for a custom quote — from €15, with complete setup handled for you. We respond within 24 hours.',
     primary: 'Get a Quote',
     secondary: 'Contact Us',
   },
@@ -154,9 +139,15 @@ export const en = {
   // Contact Form
   contact: {
     eyebrow: 'Contact',
-    headline: 'Contact Us',
+    headline: "Let's get your business set up.",
     description:
       'Fill out the form and we\'ll get back to you within 24 hours with a custom quote.',
+    highlights: {
+      price: { label: 'From €15', note: 'Affordable pricing' },
+      location: { label: 'Vilnius, Lithuania', note: "We're here to help" },
+      onsite: { label: 'We come to you', note: 'Right to your location' },
+      setup: { label: 'Setup within 24 hours', note: 'Fast and reliable' },
+    },
     fields: {
       businessName: 'Business Name',
       contactPerson: 'Contact Person',

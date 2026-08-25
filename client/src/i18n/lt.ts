@@ -2,7 +2,6 @@ export const lt = {
   // Navigation
   nav: {
     howItWorks: 'Kaip veikia',
-    benefits: 'Privalumai',
     product: 'Produktas',
     faq: 'D.U.K.',
     contact: 'Kontaktai',
@@ -11,15 +10,18 @@ export const lt = {
 
   // Hero
   hero: {
-    eyebrow: 'NFC Technologija',
-    headline: 'Daugiau Google atsiliepimų.\nPaprasčiau.',
+    eyebrow: 'NFC Google atsiliepimų sprendimas',
+    headline: 'Palengvinkite klientams\nGoogle atsiliepimo palikimą.',
     subheadline:
-      'ReviewBoost leidžia klientams greitai pasiekti jūsų Google atsiliepimo puslapį vienu telefono prisilietimu.',
+      'Premium NFC atsiliepimų kortelė verslams, kurie nori greitesnio ir paprastesnio būdo klientams palikti atsiliepimą.',
     cta: 'Gauti pasiūlymą',
     secondary: 'Sužinoti daugiau',
-    scrollIndicator: 'Skaityti daugiau',
+    scrollIndicator: 'Slinkite',
     nfcBadge: 'NFC paruošta',
-    trustBadge: 'Pasitikima verslų visame pasaulyje',
+    trustBadge: 'Veikia su Google atsiliepimais',
+    priceLabel: 'Nuo 15 €',
+    priceNote: 'Galimas visas įrengimas',
+    locationLine: 'Įsikūrę Vilniuje. Atvažiuojame pas jus — įrengiame per 24 valandas.',
     phoneReviewLabel: 'Įvertinkite savo patirtį',
     phoneSubmitLabel: 'Pateikti',
     phoneTapLabel: 'Palieskite',
@@ -69,7 +71,7 @@ export const lt = {
     specs: {
       material: 'Medžiaga',
       size: 'Dydis',
-      chip: ' lustas',
+      chip: 'lustas',
       adhesive: 'Lipnioji danga',
       finish: 'Paviršius',
       design: 'Spausdinimas',
@@ -82,33 +84,16 @@ export const lt = {
     ],
   },
 
-  // Benefits
-  benefits: {
-    eyebrow: 'Privalumai',
-    headline: 'Kodėl verta rinktis ReviewBoost',
-    learnMore: 'Sužinoti daugiau',
-    items: [
-      {
-        title: 'PAPRASČIAU',
-        description:
-          'Pašalina kliūtis, su kuriomis susiduria klientai bandydami palikti atsiliepimą. Vienas prisilietimas — ir atsiveria atsiliepimo puslapis.',
-      },
-      {
-        title: 'PROFESIONALIAU',
-        description:
-          'Modernus fizinis jūsų verslo elementas, kuris rodo, kad vertinate klientų nuomonę ir rūpinatės savo reputacija.',
-      },
-      {
-        title: 'GREIČIAU',
-        description:
-          'Pašalina nereikalingus žingsnius tarp kliento ir atsiliepimo. Jokio ieškojimo, jokio prisijungimo — tiesiog prisilietimas.',
-      },
-      {
-        title: 'PATOGU',
-        description:
-          'Galima pastatyti ten, kur klientai natūraliai lankosi — ant prekystalio, prie kasos ar kitose matomose vietose.',
-      },
-    ],
+  // Rezultatai (prieš / po)
+  results: {
+    eyebrow: 'Rezultatai',
+    headline: 'Kaip auga jūsų verslas su ReviewBoost',
+    before: 'Prieš',
+    after: 'Po',
+    business: 'Jūsų verslas',
+    reviewsBefore: '(45 atsiliepimų)',
+    reviewsAfter: '(152 atsiliepimai)',
+    caption: 'Daugiau teigiamų atsiliepimų. Didesnis reitingas. Daugiau pasitikėjimo.',
   },
 
   // Use Cases
@@ -146,7 +131,7 @@ export const lt = {
     eyebrow: 'Veiksmas',
     headline: 'Pasiruošę surinkti\ndaugiau atsiliepimų?',
     description:
-      'Susisiekite su mumis ir gaukite individualų pasiūlymą. Atsakysime per 24 valandas.',
+      'Susisiekite dėl individualaus pasiūlymo — nuo 15 €, visą įrengimą prisiimame mes. Atsakysime per 24 valandas.',
     primary: 'Gauti pasiūlymą',
     secondary: 'Susisiekti',
   },
@@ -154,9 +139,15 @@ export const lt = {
   // Contact Form
   contact: {
     eyebrow: 'Kontaktai',
-    headline: 'Susisiekite su mumis',
+    headline: 'Paruoškime jūsų verslą.',
     description:
       'Užpildykite formą ir mes susisieksime su jumis per 24 valandas su individualiu pasiūlymu.',
+    highlights: {
+      price: { label: 'Nuo 15 €', note: 'Prieinama kaina' },
+      location: { label: 'Vilnius, Lietuva', note: 'Esame čia, kad padėtume' },
+      onsite: { label: 'Atvažiuojame pas jus', note: 'Tiesiai į jūsų vietą' },
+      setup: { label: 'Įrengiame per 24 valandas', note: 'Greitai ir patikimai' },
+    },
     fields: {
       businessName: 'Įmonės pavadinimas',
       contactPerson: 'Kontaktinis asmuo',

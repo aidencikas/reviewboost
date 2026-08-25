@@ -13,7 +13,6 @@ export function ProductShowcase() {
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const descriptionRef = useRef<HTMLParagraphElement>(null);
   const productRef = useRef<HTMLDivElement>(null);
-  const detailRef = useRef<HTMLDivElement>(null);
   const specsRef = useRef<HTMLDivElement>(null);
   const featuresRef = useRef<HTMLDivElement>(null);
 
@@ -23,7 +22,6 @@ export function ProductShowcase() {
     gsap.set(headlineRef.current, { opacity: 0, y: 30 });
     gsap.set(descriptionRef.current, { opacity: 0, y: 20 });
     gsap.set(productRef.current, { opacity: 0, scale: 0.92, y: 20 });
-    gsap.set(detailRef.current, { opacity: 0, scale: 0.85, y: 30 });
     gsap.set(featuresRef.current?.children || [], { opacity: 0, x: -20 });
     gsap.set(specsRef.current, { opacity: 0, y: 20 });
 
@@ -43,7 +41,6 @@ export function ProductShowcase() {
     })
       .to(descriptionRef.current, { opacity: 1, y: 0, duration: 0.7 }, '-=0.5')
       .to(productRef.current, { opacity: 1, scale: 1, y: 0, duration: 1.0, ease: 'power2.out' }, '-=0.4')
-      .to(detailRef.current, { opacity: 1, scale: 1, y: 0, duration: 0.8, ease: 'back.out(1.3)' }, '-=0.6')
       .to(featuresRef.current?.children || [], { opacity: 1, x: 0, duration: 0.6, stagger: 0.1, ease: 'power3.out' }, '-=0.4')
       .to(specsRef.current, { opacity: 1, y: 0, duration: 0.7 }, '-=0.3');
 
@@ -70,7 +67,7 @@ export function ProductShowcase() {
     <section
       ref={sectionRef}
       id="product"
-      className="relative py-28 md:py-36 lg:py-44 overflow-hidden"
+      className="relative py-20 md:py-36 lg:py-44 overflow-hidden"
     >
       <div className="absolute inset-0">
         <div className={`absolute inset-0 ${
@@ -126,31 +123,20 @@ export function ProductShowcase() {
                 />
               </div>
 
-              <div className="relative z-10 product-shine">
+              <div className="relative z-10 product-shine rounded-2xl md:rounded-3xl overflow-hidden shadow-[0_30px_60px_-15px_rgba(6,10,20,0.35)] ring-1 ring-black/5 dark:ring-white/10 max-w-lg transition-transform duration-500 hover:scale-[1.02]">
                 {theme === 'dark' ? (
                   <ProductImage
                     variant="dark"
                     alt="ReviewBoost NFC Google Review Card - Dark"
-                    className="w-full max-w-lg drop-shadow-2xl transition-transform duration-500 hover:scale-[1.02]"
+                    className="w-full"
                   />
                 ) : (
                   <ProductImage
                     variant="bright"
                     alt="ReviewBoost NFC Google Review Card - Bright"
-                    className="w-full max-w-lg drop-shadow-2xl transition-transform duration-500 hover:scale-[1.02]"
+                    className="w-full"
                   />
                 )}
-              </div>
-
-              <div
-                ref={detailRef}
-                className="absolute -bottom-6 -right-6 md:-bottom-8 md:-right-8 w-36 h-36 md:w-44 md:h-44 rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10 z-20"
-              >
-                <ProductImage
-                  variant="secondary"
-                  alt="ReviewBoost card detail"
-                  className="w-full h-full object-cover"
-                />
               </div>
 
               <div className="absolute -top-4 -left-4 md:-top-6 md:-left-6">

@@ -90,7 +90,7 @@ export function HowItWorks() {
     <section
       ref={sectionRef}
       id="how-it-works"
-      className="relative py-28 md:py-36 lg:py-44 overflow-hidden"
+      className="relative py-20 md:py-36 lg:py-44 overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0 bg-[var(--bg-primary)]" />
@@ -159,11 +159,11 @@ export function HowItWorks() {
                 {/* Visual */}
                 <div className="mb-6 flex justify-center h-24 items-center">
                   {index === 0 && (
-                    <div className="w-40 h-24 rounded-xl overflow-hidden shadow-lg border border-[var(--border-subtle)] group-hover:shadow-xl transition-shadow duration-500">
+                    <div className="w-36 rounded-xl overflow-hidden shadow-lg border border-[var(--border-subtle)] group-hover:shadow-xl transition-shadow duration-500">
                       <ProductImage
                         variant="secondary"
                         alt="ReviewBoost card"
-                        className="w-full h-full object-cover"
+                        className="w-full h-auto"
                       />
                     </div>
                   )}

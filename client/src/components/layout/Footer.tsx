@@ -3,6 +3,7 @@ import { useLanguage } from '../../i18n';
 import { siteConfig } from '../../config/siteConfig';
 import { Container } from '../ui/Container';
 import { Logo } from '../ui/Logo';
+import { Button } from '../ui/Button';
 
 export function Footer() {
   const { t } = useLanguage();
@@ -21,11 +22,9 @@ export function Footer() {
               <p className="text-[var(--text-secondary)] text-sm">
                 {t.footer.description}
               </p>
-              <a href="#contact">
-                <span className="inline-flex items-center px-4 py-2 text-sm font-semibold bg-[var(--color-blue-500)] text-white rounded-[var(--radius-md)] hover:bg-[var(--color-blue-600)] transition-colors">
-                  {t.nav.getQuote}
-                </span>
-              </a>
+              <Button variant="primary" size="sm" href="#contact">
+                {t.nav.getQuote}
+              </Button>
             </div>
 
             {/* Quick Links */}
@@ -40,14 +39,6 @@ export function Footer() {
                     className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
                   >
                     {t.nav.howItWorks}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#benefits"
-                    className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
-                  >
-                    {t.nav.benefits}
                   </a>
                 </li>
                 <li>

@@ -6,9 +6,9 @@ import { useLanguage } from './i18n';
 import {
   Hero,
   Problem,
+  Results,
   HowItWorks,
   ProductShowcase,
-  Benefits,
   UseCases,
   BusinessValue,
   CTA,
@@ -82,9 +82,9 @@ function HomePage() {
       <main id="main-content">
         <Hero />
         <Problem />
+        <Results />
         <HowItWorks />
         <ProductShowcase />
-        <Benefits />
         <UseCases />
         <BusinessValue />
         <CTA />

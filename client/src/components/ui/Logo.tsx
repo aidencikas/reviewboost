@@ -33,7 +33,9 @@ export function Logo({ className = '', width = 40, height = 40 }: LogoProps) {
           aria-hidden="true"
         />
       </picture>
-      <span>{siteConfig.brand}</span>
+      <span>
+        Review<span className="text-[var(--color-blue-500)]">Boost</span>
+      </span>
     </a>
   );
 }

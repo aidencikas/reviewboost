@@ -73,7 +73,7 @@ export function CTA() {
     <section
       ref={sectionRef}
       id="cta"
-      className="relative py-28 md:py-36 lg:py-44 overflow-hidden noise-overlay"
+      className="relative py-20 md:py-36 lg:py-44 overflow-hidden noise-overlay"
     >
       {/* Deep navy background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-navy-950)] via-[var(--color-navy-900)] to-[var(--color-navy-800)]" />
@@ -117,24 +117,24 @@ export function CTA() {
               {t.cta.headline}
             </h2>
             <p
-              ref={descriptionRef}
-              className="text-body-lg text-[var(--color-blue-200)]/60 mb-8 md:mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed"
+              ref={descriptionRef}                className="text-body-lg text-[var(--color-blue-200)] mb-8 md:mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed"
             >
               {t.cta.description}
             </p>
             <div
               ref={ctaRef}
-              className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start"
+              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 justify-center lg:justify-start max-w-md sm:max-w-none mx-auto lg:mx-0"
             >
-              <Button variant="primary" size="lg">
-                <a href="#contact">{t.cta.primary}</a>
+              <Button variant="accent" size="lg" href="#contact" className="w-full sm:w-auto">
+                {t.cta.primary}
               </Button>
               <Button
                 variant="secondary"
                 size="lg"
-                className="border-white/20 text-white hover:border-white/40 hover:text-white"
+                href="#contact"
+                className="w-full sm:w-auto border-white/20 text-white hover:border-white/40 hover:text-white hover:bg-white/5"
               >
-                <a href="#contact">{t.cta.secondary}</a>
+                {t.cta.secondary}
               </Button>
             </div>
           </div>
@@ -153,11 +153,11 @@ export function CTA() {
               </div>
 
               {/* Product */}
-              <div className="relative z-10 product-shine">
+              <div className="relative z-10 product-shine rounded-2xl md:rounded-3xl overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] ring-1 ring-white/10 max-w-sm transition-transform duration-500 hover:scale-[1.03]">
                 <ProductImage
                   variant="dark"
                   alt="ReviewBoost NFC Card"
-                  className="w-full max-w-sm drop-shadow-2xl transition-transform duration-500 hover:scale-[1.03]"
+                  className="w-full"
                 />
               </div>
 

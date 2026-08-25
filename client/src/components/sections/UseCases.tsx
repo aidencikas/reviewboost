@@ -74,7 +74,7 @@ export function UseCases() {
     <section
       ref={sectionRef}
       id="use-cases"
-      className="relative py-28 md:py-36 lg:py-44 overflow-hidden"
+      className="relative py-20 md:py-36 lg:py-44 overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0 bg-[var(--bg-secondary)]" />

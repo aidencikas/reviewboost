@@ -20,12 +20,31 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lock body scroll while the mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      const previousOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = previousOverflow;
+      };
+    }
+  }, [isMobileMenuOpen]);
+
+  // Close the mobile menu with Escape
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+    const handleKeydown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsMobileMenuOpen(false);
+    };
+    window.addEventListener('keydown', handleKeydown);
+    return () => window.removeEventListener('keydown', handleKeydown);
+  }, [isMobileMenuOpen]);
+
   const navLinks = [
-    { href: '#how-it-works', label: t.nav.howItWorks },
-    { href: '#benefits', label: t.nav.benefits },
     { href: '#product', label: t.nav.product },
+    { href: '#how-it-works', label: t.nav.howItWorks },
     { href: '#faq', label: t.nav.faq },
-    { href: '#contact', label: t.nav.contact },
   ];
 
   return (
@@ -34,9 +53,11 @@ export function Navbar() {
         fixed top-0 left-0 right-0
         z-[var(--z-sticky)]
         transition-all duration-[var(--duration-normal)] ease-[var(--ease-default)]
-        ${isScrolled 
-          ? 'bg-[var(--bg-primary)]/90 backdrop-blur-md shadow-[var(--shadow-sm)]' 
-          : 'bg-transparent'
+        ${isScrolled && !isMobileMenuOpen
+          ? 'bg-[var(--bg-primary)]/90 backdrop-blur-md shadow-[var(--shadow-sm)]'
+          : isScrolled || isMobileMenuOpen
+            ? 'bg-[var(--bg-primary)]/90 backdrop-blur-md'
+            : 'bg-transparent'
         }
       `}
       aria-label={t.accessibility.mainNavigation}
@@ -57,6 +78,7 @@ export function Navbar() {
                   text-sm font-medium
                   text-[var(--text-secondary)]
                   hover:text-[var(--text-primary)]
+                  py-2
                   transition-colors duration-[var(--duration-fast)]
                 "
               >
@@ -69,19 +91,18 @@ export function Navbar() {
           <div className="hidden lg:flex items-center gap-3">
             <LanguageToggle />
             <ThemeToggle />
-            <Button variant="primary" size="sm">
-              <a href="#contact">
-                {t.nav.getQuote}
-              </a>
+            <Button variant="primary" size="sm" href="#contact">
+              {t.nav.getQuote}
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+            className="lg:hidden p-3 -mr-2 text-[var(--text-secondary)] hover:text-[var(--text-primary)] rounded-[var(--radius-md)] focus-visible:outline-2 focus-visible:outline-[var(--color-primary)] focus-visible:outline-offset-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? t.accessibility.closeMenu : t.accessibility.openMenu}
             aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-menu"
           >
             <svg
               className="w-6 h-6"
@@ -102,16 +123,18 @@ export function Navbar() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-[var(--border-subtle)]">
-            <div className="flex flex-col gap-4">
+          <div id="mobile-menu" className="lg:hidden pb-6 pt-4 border-t border-[var(--border-subtle)] max-h-[calc(100svh-4rem)] overflow-y-auto">
+            <div className="flex flex-col">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   className="
-                    text-base font-medium
-                    text-[var(--text-secondary)]
-                    hover:text-[var(--text-primary)]
+                    text-lg font-medium
+                    text-[var(--text-primary)]
+                    hover:text-[var(--color-blue-500)]
+                    py-3.5 px-2
+                    border-b border-[var(--border-subtle)]
                     transition-colors duration-[var(--duration-fast)]
                   "
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -119,18 +142,18 @@ export function Navbar() {
                   {link.label}
                 </a>
               ))}
-              <div className="flex items-center gap-3 pt-4 border-t border-[var(--border-subtle)]">
+              <div className="flex items-center justify-between gap-3 py-5">
                 <LanguageToggle />
                 <ThemeToggle />
               </div>
               <Button
                 variant="primary"
+                size="lg"
+                href="#contact"
                 className="w-full"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <a href="#contact" className="w-full text-center">
-                  {t.nav.getQuote}
-                </a>
+                {t.nav.getQuote}
               </Button>
             </div>
           </div>
